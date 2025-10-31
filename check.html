@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>驗證登入中...</title>
+<script>
+  const isLogin = localStorage.getItem('jinde_login_ok') === '1';
+  const ref = document.referrer;
+  const target =
+    ref && !ref.includes('check.html') && !ref.includes('login.html')
+      ? ref
+      : '錦德防水工程行_主頁_旗艦企業主控台.html';
+
+  if (!isLogin) {
+    window.location.href = 'login.html';
+  } else {
+    window.location.href = target;
+  }
+</script>
+</head>
+<body>
+<p>正在驗證登入身分...</p>
+</body>
+</html>
